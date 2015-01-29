@@ -2,35 +2,26 @@ angular.module('app.controllers', [])
 
 .controller('HomeCtrl', function($scope) {})
 
-.controller('LocationsCtrl', function($scope, Locations) {
+.controller('LocationsCtrl', function($scope, Locations, focus) {
+  focus('search');
+
   $scope.locations = Locations.all();
+
   $scope.remove = function(location) {
     Locations.remove(location);
-  }
-})
-.controller('MapCtrl', function($scope, $ionicLoading) {
-  $scope.mapCreated = function(map) {
-    $scope.map = map;
   };
 
-  $scope.centerOnMe = function () {
-    console.log("Centering");
-    if (!$scope.map) {
-      return;
-    }
+  $scope.location = {
+    city: ''
+  };
 
-    $scope.loading = $ionicLoading.show({
-      content: 'Getting location...',
-      showBackdrop: false
-    });
-
-    navigator.geolocation.getCurrentPosition(function (pos) {
-      console.log('Got pos', pos);
-      $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-      $scope.loading.hide();
-    }, function (error) {
-      alert('Unable to get location: ' + error.message);
-    });
+  $scope.search = function() {
+    console.log(arguments)
+  };
+})
+.controller('MapCtrl', function($scope) {
+  $scope.mapCreated = function(map) {
+    $scope.map = map;
   };
 })
 
