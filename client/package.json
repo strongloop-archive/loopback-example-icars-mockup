@@ -1,7 +1,7 @@
 {
-  "name": "icars-client",
+  "name": "client",
   "version": "1.0.0",
-  "description": "icars-client: An Ionic project",
+  "description": "client: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
