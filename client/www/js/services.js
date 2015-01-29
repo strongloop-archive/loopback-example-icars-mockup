@@ -1,34 +1,51 @@
 angular.module('app.services', [])
 
-.factory('Chats', function() {
+.factory('Locations', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
   var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+    city: 'San Mateo',
+    dealership: 'BMW San Mateo',
+    image: 'img/bmw.png',
+    geoX: 12.345,
+    geoY: 12.345
   }, {
     id: 2,
-    name: 'Andrew Jostlin',
-    lastText: 'Did you get the ice cream?',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
+    city: 'San Mateo',
+    dealership: 'Tesla San Mateo',
+    image: 'img/tesla.png',
+    geoX: 12.345,
+    geoY: 12.345
   }, {
     id: 3,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+    city: 'San Mateo',
+    dealership: 'Mazda San Mateo',
+    image: 'img/mazda.png',
+    geoX: 12.345,
+    geoY: 12.345
   }, {
     id: 4,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
+    city: 'Vancouver',
+    dealership: 'BMW Vancouver',
+    image: 'img/bmw.png',
+    geoX: 12.345,
+    geoY: 12.345
+  }, {
+    id: 5,
+    city: 'Vancouver',
+    dealership: 'Tesla Vancouver',
+    image: 'img/tesla.png',
+    geoX: 12.345,
+    geoY: 12.345
+  }, {
+    id: 6,
+    city: 'Vancouver',
+    dealership: 'Mazda Vancouver',
+    image: 'img/mazda.png',
+    geoX: 12.345,
+    geoY: 12.345
   }];
 
   return {
@@ -38,10 +55,10 @@ angular.module('app.services', [])
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(locationId) {
+      for (var i = 0; i < locations.length; i++) {
+        if (locations[i].id === parseInt(locationId)) {
+          return locations[i];
         }
       }
       return null;

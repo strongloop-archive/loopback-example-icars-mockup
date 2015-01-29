@@ -2,15 +2,11 @@ angular.module('app.controllers', [])
 
 .controller('HomeCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+.controller('LocationsCtrl', function($scope, Locations) {
+  $scope.locations = Locations.all();
+  $scope.remove = function(location) {
+    Locations.remove(location);
   }
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('FriendsCtrl', function($scope, Friends) {
