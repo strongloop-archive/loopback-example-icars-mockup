@@ -11,37 +11,40 @@ angular.module('app.controllers', [])
   });
 
   $scope.location = {
-    city: '',
-    lat: 0,
-    lng: 0
+    city: ''
   };
 
   $scope.search = function(city) {
     Map.removeMarkers();
     var locs = Locations.find(city)
-    if (locs) {
+    if (locs)
       locs.forEach(function(loc) {
         Map.addMarker(loc);
       });
-    }
     if (!city)
       Map.addCurrentLocationMarker();
     Map.center();
   };
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
+.controller('ListingsCtrl', function($scope, $stateParams, Listings) {
+  $scope.items = !$stateParams.locationId ?
+      Listings.find() :
+      Listings.findByLocationId($stateParams.locationId);
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('ListingsItemCtrl', function($scope, $stateParams, Listings) {
+  $scope.item = Listings.findById($stateParams.itemId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('SettingsCtrl', function($scope) {
+  $scope.settings = {
+    enableFriends: true
+  };
+})
+
+.controller('InfoCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
 });
-
-

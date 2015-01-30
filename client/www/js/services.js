@@ -44,7 +44,7 @@ angular.module('app.services', [])
     var marker = new google.maps.Marker({
       position: latlng,
       map: map,
-      html: '<a href="#/tab/listings/1">' + loc.title + '</a>'
+      html: '<a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a>'
     });
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(this.html);
@@ -83,20 +83,38 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
-    title: 'Location 1',
+    title: 'BMW Vancouver',
     lat: 49.2840730,
     lng: -123.1119490
   }, {
     id: 2,
     city: 'Vancouver',
-    title: 'Location 2',
+    title: 'Tesla Vancouver',
     lat: 49.2878210,
     lng: -123.1193530
   }, {
     id: 3,
     city: 'Vancouver',
-    title: 'Location 3',
+    title: 'Mazda Vancouver',
     lat: 49.2905060,
+    lng: -123.1284980
+  }, {
+    id: 4,
+    city: 'San Mateo',
+    title: 'BMW San Mateo',
+    lat: 47.2878210,
+    lng: -123.1193530
+  }, {
+    id: 5,
+    city: 'San Mateo',
+    title: 'Tesla San Mateo',
+    lat: 47.2905060,
+    lng: -123.1284980
+  }, {
+    id: 6,
+    city: 'San Mateo',
+    title: 'Mazda San Mateo',
+    lat: 47.2905060,
     lng: -123.1284980
   }];
 
@@ -122,47 +140,43 @@ angular.module('app.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  // Some fake testing data
-  var friends = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    notes: 'Enjoys drawing things',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
+.factory('Listings', function() {
+  var listings = [{
     id: 1,
-    name: 'Max Lynx',
-    notes: 'Odd obsession with everything',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+    locationId: 1
   }, {
     id: 2,
-    name: 'Andrew Jostlen',
-    notes: 'Wears a sweet leather Jacket. I\'m a bit jealous',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
+    locationId: 1
   }, {
     id: 3,
-    name: 'Adam Bradleyson',
-    notes: 'I think he needs to buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
+    locationId: 2
   }, {
     id: 4,
-    name: 'Perry Governor',
-    notes: 'Just the nicest guy',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
+    locationId: 2
+  }, {
+    id: 5,
+    locationId: 3
+  }, {
+    id: 6,
+    locationId: 3
   }];
 
+  function find() {
+    return listings;
+  }
+
+  function findByLocationId(id) {
+    var matches = [];
+    listings.forEach(function(item) {
+      if (item.locationId == id)
+        matches.push(item);
+    });
+    return matches;
+  };
 
   return {
-    all: function() {
-      return friends;
-    },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
-    }
+    find: find,
+    findByLocationId: findByLocationId
   }
 })
 

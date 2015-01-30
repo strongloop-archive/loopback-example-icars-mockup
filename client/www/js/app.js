@@ -31,7 +31,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'app.directiv
 
     // setup an abstract state for the tabs directive
     .state('tab', {
-      url: "/tab",
+      url: '/tab',
       abstract: true,
       templateUrl: "templates/tabs.html"
     })
@@ -41,7 +41,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'app.directiv
       url: '/home',
       views: {
         'tab-home': {
-          templateUrl: 'templates/tab-home.html',
+          templateUrl: 'templates/home.html',
           controller: 'HomeCtrl'
         }
       }
@@ -50,42 +50,57 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services', 'app.directiv
       url: '/locations',
       views: {
         'tab-locations': {
-          templateUrl: 'templates/tab-locations.html',
+          templateUrl: 'templates/locations.html',
           controller: 'LocationsCtrl'
         }
       }
     })
-
-  .state('tab.friends', {
-      url: '/friends',
+    .state('tab.listings', {
+      url: '/listings',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-listings': {
+          templateUrl: 'templates/listings.html',
+          controller: 'ListingsCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.listings-location', {
+      url: '/listings/:locationId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'tab-listings': {
+          templateUrl: 'templates/listings.html',
+          controller: 'ListingsCtrl'
         }
       }
     })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.listings-item', {
+      url: '/listings/:locationId/:itemId',
+      views: {
+        'tab-listings': {
+          templateUrl: 'templates/listings-item.html',
+          controller: 'ListingsItemCtrl'
+        }
       }
-    }
-  });
+    })
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'templates/settings.html',
+          controller: 'SettingsCtrl'
+        }
+      }
+    })
+    .state('tab.info', {
+      url: '/info',
+      views: {
+        'tab-info': {
+          templateUrl: 'templates/info.html'
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/locations');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });
