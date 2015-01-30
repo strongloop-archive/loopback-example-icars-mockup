@@ -112,7 +112,7 @@ angular.module('app.services', [])
   }, {
     id: 6,
     city: 'Redwood City',
-    title: '2821 El Camino Real',
+    title: 'iCars Redwood City',
     lat: 37.4704120,
     lng: -122.2127590
   }];
@@ -152,7 +152,7 @@ angular.module('app.services', [])
     price: '$6,000'
   }, {
     id: 2,
-    locationId: 1,
+    locationId: 2,
     dealer: 'iCars Stanford',
     logo: 'img/bmw.png',
     image: 'img/m3.jpg',
@@ -162,7 +162,7 @@ angular.module('app.services', [])
     price: '$9,000'
   }, {
     id: 3,
-    locationId: 2,
+    locationId: 3,
     dealer: 'iCars East Palo Alto',
     logo: 'img/tesla.png',
     image: 'img/model-s.jpg',
@@ -172,7 +172,7 @@ angular.module('app.services', [])
     price: '$20,000'
   }, {
     id: 4,
-    locationId: 2,
+    locationId: 4,
     dealer: 'iCars Menlo Park',
     logo: 'img/tesla.png',
     image: 'img/model-x.jpg',
@@ -182,7 +182,7 @@ angular.module('app.services', [])
     price: '$16,000'
   }, {
     id: 5,
-    locationId: 3,
+    locationId: 5,
     dealer: 'iCars Mountain View',
     logo: 'img/mazda.png',
     image: 'img/miata.jpg',
@@ -192,7 +192,7 @@ angular.module('app.services', [])
     price: '$1,000'
   }, {
     id: 6,
-    locationId: 3,
+    locationId: 6,
     dealer: 'iCars Redwood City',
     logo: 'img/mazda.png',
     image: 'img/shinari.jpg',
