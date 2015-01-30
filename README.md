@@ -1,1 +1,1 @@
-#loopback-example-icars
+#loopback-example-icars-mockup
