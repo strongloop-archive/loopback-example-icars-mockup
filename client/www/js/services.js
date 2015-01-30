@@ -203,7 +203,7 @@ angular.module('app.services', [])
   }, {
 
     id: 7,
-    locationId: 1,
+    locationId: 5,
     dealer: 'iCars Downtown Palo Alto',
     logo: 'img/bmw.png',
     image: 'img/m3.jpg',
@@ -222,17 +222,6 @@ angular.module('app.services', [])
     model: 'Model S',
     price: '$20,000'
   }, {
-    id: 9,
-    locationId: 1,
-    dealer: 'iCars Downtown Palo Alto',
-    dealer: 'iCars Menlo Park',
-    logo: 'img/tesla.png',
-    image: 'img/model-x.jpg',
-    city: 'Palo Alto',
-    address: '459 Hamilton Ave, CA 94301',
-    model: 'Model X',
-    price: '$16,000'
-  }, {
     id: 10,
     locationId: 1,
     dealer: 'iCars Downtown Palo Alto',
@@ -242,16 +231,6 @@ angular.module('app.services', [])
     address: '459 Hamilton Ave, CA 94301',
     model: 'Mazda Miata 2015',
     price: '$1,000'
-  }, {
-    id: 11,
-    locationId: 1,
-    dealer: 'iCars Downtown Palo Alto',
-    logo: 'img/mazda.png',
-    image: 'img/shinari.jpg',
-    city: 'Palo Alto',
-    address: '459 Hamilton Ave, CA 94301',
-    model: 'Mazda Shinari',
-    price: '$50,000'
   }, {
     id: 12,
     locationId: 2,
@@ -274,7 +253,7 @@ angular.module('app.services', [])
     price: '$20,000'
   }, {
     id: 14,
-    locationId: 2,
+    locationId: 3,
     dealer: 'iCars Stanford',
     logo: 'img/tesla.png',
     image: 'img/model-x.jpg',
@@ -284,7 +263,7 @@ angular.module('app.services', [])
     price: '$16,000'
   }, {
     id: 15,
-    locationId: 2,
+    locationId: 4,
     dealer: 'iCars Stanford',
     logo: 'img/mazda.png',
     image: 'img/miata.jpg',
