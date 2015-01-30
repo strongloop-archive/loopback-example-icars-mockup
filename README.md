@@ -7,3 +7,9 @@ npm install -g ionic
 cd loopback-example-icars-mockup/client
 ionic emulate
 ```
+
+##Versions
+```
+cordova -v #4.2.0
+ionic -v #1.3.3
+```
