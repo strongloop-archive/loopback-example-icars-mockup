@@ -26,6 +26,7 @@ angular.module('app.controllers', [])
     }
     if (!city)
       Map.addCurrentLocationMarker();
+    Map.center();
   };
 })
 

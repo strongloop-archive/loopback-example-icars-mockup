@@ -43,13 +43,25 @@ angular.module('app.services', [])
     var latlng = new google.maps.LatLng(loc.lat, loc.lng);
     var marker = new google.maps.Marker({
       position: latlng,
-      map: map
+      map: map,
+      html: '<a href="#/tab/listings/1">' + loc.title + '</a>'
     });
-    marker.setVisible(true);
-    marker.setMap(map);
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.setContent(this.html);
+      infowindow.open(map, this);
+    });
     markers.push(marker);
+  }
 
-    markers.push(marker);
+  function center() {
+    //  Create a new viewpoint bound
+    var bounds = new google.maps.LatLngBounds();
+    //  Go through each...
+    markers.forEach(function(marker) {
+      bounds.extend(marker.position);
+    });
+    //  Fit these bounds to the map
+    map.fitBounds(bounds);
   }
 
   function removeMarkers() {
@@ -62,6 +74,7 @@ angular.module('app.services', [])
     init: init,
     addCurrentLocationMarker: addCurrentLocationMarker,
     addMarker: addMarker,
+    center: center,
     removeMarkers: removeMarkers
   }
 })
@@ -70,16 +83,19 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
+    title: 'Location 1',
     lat: 49.2840730,
     lng: -123.1119490
   }, {
     id: 2,
     city: 'Vancouver',
+    title: 'Location 2',
     lat: 49.2878210,
     lng: -123.1193530
   }, {
     id: 3,
     city: 'Vancouver',
+    title: 'Location 3',
     lat: 49.2905060,
     lng: -123.1284980
   }];
