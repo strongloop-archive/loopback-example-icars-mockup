@@ -46,7 +46,7 @@ angular.module('app.services', [])
       map: map
     });
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent('<a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a>');
+      infowindow.setContent('<div class="gm-style-iw" style="max-width:400px;line-height:normal;white-space:nowrap;overflow:auto;"><a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a></div>');
       infowindow.open(map, this);
     });
     markers.push(marker);
