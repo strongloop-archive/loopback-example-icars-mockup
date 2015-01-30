@@ -145,50 +145,62 @@ angular.module('app.services', [])
     id: 1,
     locationId: 1,
     dealer: 'Brian Jessel BMW',
-    image: 'img/bmw.png',
+    logo: 'img/bmw.png',
+    image: 'img/1-series.jpg',
     city: 'Vancouver',
     address: '2311 Boundary Road',
-    model: '1 Series Coupe'
+    model: '1 Series Coupe',
+    price: '$60,000'
   }, {
     id: 2,
     locationId: 1,
     dealer: 'AutoWest BMW',
-    image: 'img/bmw.png',
+    logo: 'img/bmw.png',
+    image: 'img/m3.jpg',
     city: 'Vancouver',
     address: '4391 Kingsway Street',
-    model: 'M3'
+    model: 'M3',
+    price: '$90,000'
   }, {
     id: 3,
     locationId: 2,
     dealer: 'Tesla Vancouver',
-    image: 'img/tesla.png',
+    logo: 'img/tesla.png',
+    image: 'img/model-s.jpg',
     city: 'Vancouver',
     address: '957 Nanaimo Drive',
-    model: 'Model S'
+    model: 'Model S',
+    price: '$200,000'
   }, {
     id: 4,
     locationId: 2,
     dealer: 'Joe Forte Tesla',
-    image: 'img/tesla.png',
+    logo: 'img/tesla.png',
+    image: 'img/model-x.jpg',
     city: 'Vancouver',
     address: '1954 Killarney Road',
-    model: 'Model X'
+    model: 'Model X',
+    price: '$160,000'
   }, {
     id: 5,
     locationId: 3,
     dealer: 'Burnaby Mazda',
-    image: 'img/mazda.png',
+    logo: 'img/mazda.png',
+    image: 'img/miata.jpg',
     city: 'Vancouver',
     address: '3984 Willingdon Road',
-    model: 'Mazda Miata 2015'
+    model: 'Mazda Miata 2015',
+    price: '$30,000'
   }, {
     id: 6,
     locationId: 3,
     dealer: 'Mazda Downtown',
-    image: 'img/mazda.png',
+    logo: 'img/mazda.png',
+    image: 'img/shinari.jpg',
     city: 'Vancouver',
     address: '479 Alberi Street',
-    model: 'Mazda Shinari'
+    model: 'Mazda Shinari',
+    price: '$500,000'
   }];
 
   function find() {
@@ -205,10 +217,12 @@ angular.module('app.services', [])
   };
 
   function findByItemId(id) {
+    var match;
     listings.forEach(function(item) {
       if (item.id == id)
-        return item;
+        match = item;
     });
+    return match;
   }
 
   return {
