@@ -83,7 +83,7 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
-    title: 'Brian Jessel BMW BMW', //hack, map rendering with the last word missing
+    title: 'Brian Jessel BMW',
     lat: 49.2840730,
     lng: -123.1119490
   }, {
@@ -204,9 +204,17 @@ angular.module('app.services', [])
     return matches;
   };
 
+  function findByItemId(id) {
+    listings.forEach(function(item) {
+      if (item.id == id)
+        return item;
+    });
+  }
+
   return {
     find: find,
-    findByLocationId: findByLocationId
+    findByLocationId: findByLocationId,
+    findByItemId: findByItemId
   }
 })
 

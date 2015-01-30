@@ -34,7 +34,8 @@ angular.module('app.controllers', [])
 })
 
 .controller('ListingsItemCtrl', function($scope, $stateParams, Listings) {
-  $scope.item = Listings.findById($stateParams.itemId);
+  $scope.item = Listings.findByItemId($stateParams.itemId);
+  console.log($scope.item);
 })
 
 .controller('SettingsCtrl', function($scope) {
