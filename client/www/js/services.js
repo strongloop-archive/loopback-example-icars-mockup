@@ -43,11 +43,10 @@ angular.module('app.services', [])
     var latlng = new google.maps.LatLng(loc.lat, loc.lng);
     var marker = new google.maps.Marker({
       position: latlng,
-      map: map,
-      html: '<a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a>'
+      map: map
     });
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(this.html);
+      infowindow.setContent('<a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a>');
       infowindow.open(map, this);
     });
     markers.push(marker);
@@ -82,40 +81,40 @@ angular.module('app.services', [])
 .factory('Locations', function() {
   var locations = [{
     id: 1,
-    city: 'Vancouver',
-    title: 'Parker BMW',
-    lat: 49.2840730,
-    lng: -123.1119490
+    city: 'Palo Alto',
+    title: 'iCars Downtown Palo Alto',
+    lat: 37.4472200,
+    lng: -122.1586140
   }, {
     id: 2,
-    city: 'Vancouver',
-    title: 'Tesla Vancouver',
-    lat: 49.2878210,
-    lng: -123.1193530
+    city: 'Stanford',
+    title: 'iCars Stanford',
+    lat: 37.4319310,
+    lng: -122.1823700
   }, {
     id: 3,
-    city: 'Vancouver',
-    title: 'Mazda Vancouver',
-    lat: 49.2905060,
-    lng: -123.1284980
+    city: 'Palo Alto',
+    title: 'iCars East Palo Alto',
+    lat: 37.4224740,
+    lng: -122.1045870
   }, {
     id: 4,
-    city: 'San Mateo',
-    title: 'BMW San Mateo',
-    lat: 47.2878210,
-    lng: -123.1193530
+    city: 'Menlo Park',
+    title: 'iCars Menlo Park',
+    lat: 37.4833580,
+    lng: -122.1701460
   }, {
     id: 5,
-    city: 'San Mateo',
-    title: 'Tesla San Mateo',
-    lat: 47.2905060,
-    lng: -123.1284980
+    city: 'Mountain View',
+    title: 'iCars Mountain View',
+    lat: 37.3857160,
+    lng: -122.0845530
   }, {
     id: 6,
-    city: 'San Mateo',
-    title: 'Mazda San Mateo',
-    lat: 47.2905060,
-    lng: -123.1284980
+    city: 'Redwood City',
+    title: '2821 El Camino Real',
+    lat: 37.4704120,
+    lng: -122.2127590
   }];
 
   function find(city) {
@@ -144,61 +143,61 @@ angular.module('app.services', [])
   var listings = [{
     id: 1,
     locationId: 1,
-    dealer: 'Parker BMW',
+    dealer: 'iCars Downtown Palo Alto',
     logo: 'img/bmw.png',
     image: 'img/1-series.jpg',
-    city: 'Vancouver',
-    address: '2311 Boundary Road',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
     model: '1 Series Coupe',
     price: '$60,000'
   }, {
     id: 2,
     locationId: 1,
-    dealer: 'AutoWest BMW',
+    dealer: 'iCars Stanford',
     logo: 'img/bmw.png',
     image: 'img/m3.jpg',
-    city: 'Vancouver',
-    address: '4391 Kingsway Street',
+    city: 'Stanford',
+    address: '360 Oak Road, CA 94305',
     model: 'M3',
     price: '$90,000'
   }, {
     id: 3,
     locationId: 2,
-    dealer: 'Tesla Vancouver',
+    dealer: 'iCars East Palo Alto',
     logo: 'img/tesla.png',
     image: 'img/model-s.jpg',
-    city: 'Vancouver',
-    address: '957 Nanaimo Drive',
+    city: 'Palo Alto',
+    address: '811 East Charleston Road, CA 94303',
     model: 'Model S',
     price: '$200,000'
   }, {
     id: 4,
     locationId: 2,
-    dealer: 'Joe Forte Tesla',
+    dealer: 'iCars Menlo Park',
     logo: 'img/tesla.png',
     image: 'img/model-x.jpg',
-    city: 'Vancouver',
-    address: '1954 Killarney Road',
+    city: 'Menlo Park',
+    address: '205 Constitution Drive, CA 94025',
     model: 'Model X',
     price: '$160,000'
   }, {
     id: 5,
     locationId: 3,
-    dealer: 'Burnaby Mazda',
+    dealer: 'iCars Mountain View',
     logo: 'img/mazda.png',
     image: 'img/miata.jpg',
-    city: 'Vancouver',
-    address: '3984 Willingdon Road',
+    city: 'Mountain View',
+    address: '809 Weste El Camino Real, CA 94040',
     model: 'Mazda Miata 2015',
     price: '$30,000'
   }, {
     id: 6,
     locationId: 3,
-    dealer: 'Mazda Downtown',
+    dealer: 'iCars Redwood City',
     logo: 'img/mazda.png',
     image: 'img/shinari.jpg',
-    city: 'Vancouver',
-    address: '479 Alberi Street',
+    city: 'Redwood City',
+    address: '2821 El Camino Real',
     model: 'Mazda Shinari',
     price: '$500,000'
   }];
