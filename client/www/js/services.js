@@ -1,68 +1,105 @@
 angular.module('app.services', [])
 
-.factory('Locations', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Map', function() {
+  var map;
+  var markers = [];
 
-  // Some fake testing data
-  var chats = [{
-    id: 1,
-    city: 'San Mateo',
-    dealership: 'BMW San Mateo',
-    image: 'img/bmw.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }, {
-    id: 2,
-    city: 'San Mateo',
-    dealership: 'Tesla San Mateo',
-    image: 'img/tesla.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }, {
-    id: 3,
-    city: 'San Mateo',
-    dealership: 'Mazda San Mateo',
-    image: 'img/mazda.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }, {
-    id: 4,
-    city: 'Vancouver',
-    dealership: 'BMW Vancouver',
-    image: 'img/bmw.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }, {
-    id: 5,
-    city: 'Vancouver',
-    dealership: 'Tesla Vancouver',
-    image: 'img/tesla.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }, {
-    id: 6,
-    city: 'Vancouver',
-    dealership: 'Mazda Vancouver',
-    image: 'img/mazda.png',
-    geoX: 12.345,
-    geoY: 12.345
-  }];
+  //get current location from a config/localstorage id with default
+  var myLatLng = new google.maps.LatLng(49.282899, -123.1096230);
+
+  function init($el) {
+    var mapOptions = {
+      center: myLatLng,
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map($el[0], mapOptions);
+
+    // Stop the side bar from dragging when mousedown/tapdown on the map
+    google.maps.event.addDomListener($el[0], 'mousedown', function (e) {
+      e.preventDefault();
+      return false;
+    });
+
+    addCurrentLocationMarker();
+  }
+
+  function addCurrentLocationMarker() {
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'You are here'
+    });
+    infowindow = new google.maps.InfoWindow({
+      content: 'You are here'
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map, marker);
+    });
+    markers.push(marker);
+  }
+
+  function addMarker(loc) {
+    var latlng = new google.maps.LatLng(loc.lat, loc.lng);
+    var marker = new google.maps.Marker({
+      position: latlng,
+      map: map
+    });
+    marker.setVisible(true);
+    marker.setMap(map);
+    markers.push(marker);
+
+    markers.push(marker);
+  }
+
+  function removeMarkers() {
+    markers.forEach(function(marker) {
+      marker.setMap(null);
+    });
+  }
 
   return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(locationId) {
-      for (var i = 0; i < locations.length; i++) {
-        if (locations[i].id === parseInt(locationId)) {
-          return locations[i];
-        }
-      }
-      return null;
+    init: init,
+    addCurrentLocationMarker: addCurrentLocationMarker,
+    addMarker: addMarker,
+    removeMarkers: removeMarkers
+  }
+})
+
+.factory('Locations', function() {
+  var locations = [{
+    id: 1,
+    city: 'Vancouver',
+    lat: 49.2840730,
+    lng: -123.1119490
+  }, {
+    id: 2,
+    city: 'Vancouver',
+    lat: 49.2878210,
+    lng: -123.1193530
+  }, {
+    id: 3,
+    city: 'Vancouver',
+    lat: 49.2905060,
+    lng: -123.1284980
+  }];
+
+  function find(city) {
+    if (!city) return;
+
+    function startsWith(needle, haystack) {
+      return haystack.substr(0, needle.length) === needle;
     }
+    var matches = [];
+    locations.forEach(function(loc) {
+      if (startsWith(city.toLowerCase(), loc.city.toLowerCase()))
+        matches.push(loc);
+    });
+    return matches;
+  }
+
+  return {
+    find: find
   }
 })
 

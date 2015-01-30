@@ -2,26 +2,30 @@ angular.module('app.controllers', [])
 
 .controller('HomeCtrl', function($scope) {})
 
-.controller('LocationsCtrl', function($scope, Locations, focus) {
-  focus('search');
-
-  $scope.locations = Locations.all();
-
-  $scope.remove = function(location) {
-    Locations.remove(location);
-  };
+.controller('LocationsCtrl', function($rootScope, focus, $scope, Map,
+    Locations) {
+  //since tabs are cached (meaning the controllers only load once), we need to
+  //refocus the search field manually when changing tabs
+  $rootScope.$on('$ionicView.enter', function() {
+    focus('search');
+  });
 
   $scope.location = {
-    city: ''
+    city: '',
+    lat: 0,
+    lng: 0
   };
 
-  $scope.search = function() {
-    console.log(arguments)
-  };
-})
-.controller('MapCtrl', function($scope) {
-  $scope.mapCreated = function(map) {
-    $scope.map = map;
+  $scope.search = function(city) {
+    Map.removeMarkers();
+    var locs = Locations.find(city)
+    if (locs) {
+      locs.forEach(function(loc) {
+        Map.addMarker(loc);
+      });
+    }
+    if (!city)
+      Map.addCurrentLocationMarker();
   };
 })
 
