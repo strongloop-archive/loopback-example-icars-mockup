@@ -83,7 +83,7 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
-    title: 'Brian Jessel BMW',
+    title: 'Parker BMW',
     lat: 49.2840730,
     lng: -123.1119490
   }, {
@@ -144,7 +144,7 @@ angular.module('app.services', [])
   var listings = [{
     id: 1,
     locationId: 1,
-    dealer: 'Brian Jessel BMW',
+    dealer: 'Parker BMW',
     logo: 'img/bmw.png',
     image: 'img/1-series.jpg',
     city: 'Vancouver',

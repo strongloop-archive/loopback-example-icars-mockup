@@ -1,18 +1,20 @@
 <ion-view view-title="Locations">
   <ion-nav-buttons side="primary">
-    <a ng-click="centerOnMe()" class="button button-icon icon ion-pinpoint"> My Current Location</a>
+    <a ng-click="centerOnMe()" class="button button-icon icon ion-pinpoint"> Me</a>
   </ion-nav-buttons>
 
   <ion-content scroll="false">
     <label class="item item-input">
       <i class="icon ion-search placeholder-icon"></i>
-      <input
-          id='search'
-          type="search"
-          placeholder="Choose a city"
-          ng-model="location.city"
-          ng-change="search(location.city)">
+      <form>
+        <input
+            id='search'
+            type="search"
+            placeholder="Choose a city"
+            ng-model="location.city"
+            ng-change="search(location.city)">
+      </form>
     </label>
-    <map></map>
+    <map data-tap-disabled="true"></map>
   </ion-content>
 </ion-view>
