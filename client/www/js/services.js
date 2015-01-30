@@ -149,7 +149,7 @@ angular.module('app.services', [])
     city: 'Palo Alto',
     address: '459 Hamilton Ave, CA 94301',
     model: '1 Series Coupe',
-    price: '$60,000'
+    price: '$6,000'
   }, {
     id: 2,
     locationId: 1,
@@ -159,7 +159,7 @@ angular.module('app.services', [])
     city: 'Stanford',
     address: '360 Oak Road, CA 94305',
     model: 'M3',
-    price: '$90,000'
+    price: '$9,000'
   }, {
     id: 3,
     locationId: 2,
@@ -169,7 +169,7 @@ angular.module('app.services', [])
     city: 'Palo Alto',
     address: '811 East Charleston Road, CA 94303',
     model: 'Model S',
-    price: '$200,000'
+    price: '$20,000'
   }, {
     id: 4,
     locationId: 2,
@@ -179,7 +179,7 @@ angular.module('app.services', [])
     city: 'Menlo Park',
     address: '205 Constitution Drive, CA 94025',
     model: 'Model X',
-    price: '$160,000'
+    price: '$16,000'
   }, {
     id: 5,
     locationId: 3,
@@ -189,7 +189,7 @@ angular.module('app.services', [])
     city: 'Mountain View',
     address: '809 Weste El Camino Real, CA 94040',
     model: 'Mazda Miata 2015',
-    price: '$30,000'
+    price: '$1,000'
   }, {
     id: 6,
     locationId: 3,
@@ -199,7 +199,7 @@ angular.module('app.services', [])
     city: 'Redwood City',
     address: '2821 El Camino Real',
     model: 'Mazda Shinari',
-    price: '$500,000'
+    price: '$50,000'
   }];
 
   function find() {
