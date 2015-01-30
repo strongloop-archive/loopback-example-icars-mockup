@@ -200,6 +200,100 @@ angular.module('app.services', [])
     address: '2821 El Camino Real',
     model: 'Mazda Shinari',
     price: '$50,000'
+  }, {
+
+    id: 7,
+    locationId: 1,
+    dealer: 'iCars Downtown Palo Alto',
+    logo: 'img/bmw.png',
+    image: 'img/m3.jpg',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
+    model: 'M3',
+    price: '$9,000'
+  }, {
+    id: 8,
+    locationId: 1,
+    dealer: 'iCars Downtown Palo Alto',
+    logo: 'img/tesla.png',
+    image: 'img/model-s.jpg',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
+    model: 'Model S',
+    price: '$20,000'
+  }, {
+    id: 9,
+    locationId: 1,
+    dealer: 'iCars Downtown Palo Alto',
+    dealer: 'iCars Menlo Park',
+    logo: 'img/tesla.png',
+    image: 'img/model-x.jpg',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
+    model: 'Model X',
+    price: '$16,000'
+  }, {
+    id: 10,
+    locationId: 1,
+    dealer: 'iCars Downtown Palo Alto',
+    logo: 'img/mazda.png',
+    image: 'img/miata.jpg',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
+    model: 'Mazda Miata 2015',
+    price: '$1,000'
+  }, {
+    id: 11,
+    locationId: 1,
+    dealer: 'iCars Downtown Palo Alto',
+    logo: 'img/mazda.png',
+    image: 'img/shinari.jpg',
+    city: 'Palo Alto',
+    address: '459 Hamilton Ave, CA 94301',
+    model: 'Mazda Shinari',
+    price: '$50,000'
+  }, {
+    id: 12,
+    locationId: 2,
+    dealer: 'iCars Stanford',
+    logo: 'img/bmw.png',
+    image: 'img/1-series.jpg',
+    city: 'Stanford',
+    address: '360 Oak Road, CA 94305',
+    model: '1 Series Coupe',
+    price: '$6,000'
+  }, {
+    id: 13,
+    locationId: 2,
+    dealer: 'iCars Stanford',
+    logo: 'img/tesla.png',
+    image: 'img/model-s.jpg',
+    city: 'Stanford',
+    address: '360 Oak Road, CA 94305',
+    model: 'Model S',
+    price: '$20,000'
+  }, {
+    id: 14,
+    locationId: 2,
+    dealer: 'iCars Stanford',
+    logo: 'img/tesla.png',
+    image: 'img/model-x.jpg',
+    city: 'Stanford',
+    address: '360 Oak Road, CA 94305',
+    model: 'Model X',
+    price: '$16,000'
+  }, {
+    id: 15,
+    locationId: 2,
+    dealer: 'iCars Stanford',
+    logo: 'img/mazda.png',
+    image: 'img/miata.jpg',
+    city: 'Stanford',
+    address: '360 Oak Road, CA 94305',
+    model: 'Mazda Miata 2015',
+    price: '$1,000'
+  }, {
+
   }];
 
   function find() {
