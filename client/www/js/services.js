@@ -83,7 +83,7 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
-    title: 'Brian Jessel BMW',
+    title: 'Brian Jessel BMW BMW', //hack, map rendering with the last word missing
     lat: 49.2840730,
     lng: -123.1119490
   }, {
