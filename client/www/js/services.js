@@ -83,7 +83,7 @@ angular.module('app.services', [])
   var locations = [{
     id: 1,
     city: 'Vancouver',
-    title: 'BMW Vancouver',
+    title: 'Brian Jessel BMW',
     lat: 49.2840730,
     lng: -123.1119490
   }, {
@@ -143,22 +143,52 @@ angular.module('app.services', [])
 .factory('Listings', function() {
   var listings = [{
     id: 1,
-    locationId: 1
+    locationId: 1,
+    dealer: 'Brian Jessel BMW',
+    image: 'img/bmw.png',
+    city: 'Vancouver',
+    address: '2311 Boundary Road',
+    model: '1 Series Coupe'
   }, {
     id: 2,
-    locationId: 1
+    locationId: 1,
+    dealer: 'AutoWest BMW',
+    image: 'img/bmw.png',
+    city: 'Vancouver',
+    address: '4391 Kingsway Street',
+    model: 'M3'
   }, {
     id: 3,
-    locationId: 2
+    locationId: 2,
+    dealer: 'Tesla Vancouver',
+    image: 'img/tesla.png',
+    city: 'Vancouver',
+    address: '957 Nanaimo Drive',
+    model: 'Model S'
   }, {
     id: 4,
-    locationId: 2
+    locationId: 2,
+    dealer: 'Joe Forte Tesla',
+    image: 'img/tesla.png',
+    city: 'Vancouver',
+    address: '1954 Killarney Road',
+    model: 'Model X'
   }, {
     id: 5,
-    locationId: 3
+    locationId: 3,
+    dealer: 'Burnaby Mazda',
+    image: 'img/mazda.png',
+    city: 'Vancouver',
+    address: '3984 Willingdon Road',
+    model: 'Mazda Miata 2016'
   }, {
     id: 6,
-    locationId: 3
+    locationId: 3,
+    dealer: 'Mazda Downtown',
+    image: 'img/mazda.png',
+    city: 'Vancouver',
+    address: '479 Alberi Street',
+    model: 'Mazda Shinari'
   }];
 
   function find() {

@@ -2,8 +2,9 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-avatar" ng-repeat="item in items" type="item-text-wrap" href="#/tab/listings/{{item.id}}">
-        <img ng-src="{{item.id}}">
-        <h2>{{item.city}}</h2>
+        <img ng-src="{{item.image}}" style="border-radius:0;height:100%;">
+        <h2>{{item.model}}</h2>
+        <h3>{{item.dealer}}, {{item.city}}</h3>
       </ion-item>
     </ion-list>
   </ion-content>
