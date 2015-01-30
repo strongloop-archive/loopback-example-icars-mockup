@@ -180,7 +180,7 @@ angular.module('app.services', [])
     image: 'img/mazda.png',
     city: 'Vancouver',
     address: '3984 Willingdon Road',
-    model: 'Mazda Miata 2016'
+    model: 'Mazda Miata 2015'
   }, {
     id: 6,
     locationId: 3,
