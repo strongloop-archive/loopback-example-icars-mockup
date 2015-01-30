@@ -5,7 +5,7 @@ angular.module('app.services', [])
   var markers = [];
 
   //get current location from a config/localstorage id with default
-  var myLatLng = new google.maps.LatLng(49.282899, -123.1096230);
+  var myLatLng = new google.maps.LatLng(37.4472200, -122.1586140);
 
   function init($el) {
     var mapOptions = {
