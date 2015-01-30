@@ -7,7 +7,7 @@ angular.module('app.controllers', [])
   //since tabs are cached (meaning the controllers only load once), we need to
   //refocus the search field manually when changing tabs
   $rootScope.$on('$ionicView.enter', function() {
-    focus('search');
+    //focus('search');
     cordova.plugins.Keyboard.show();
   });
 
