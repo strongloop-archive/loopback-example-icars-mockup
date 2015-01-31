@@ -48,8 +48,11 @@ angular.module('app.services', [])
       position: latlng,
       map: map
     });
+    var content = '<div class="gm-style-iw" style="max-width:400px;line-height:normal;white-space:nowrap;overflow:auto;"><a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a></div>';
+    infowindow = new google.maps.InfoWindow({
+      content: content
+    });
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent('<div class="gm-style-iw" style="max-width:400px;line-height:normal;white-space:nowrap;overflow:auto;"><a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a></div>');
       infowindow.open(map, this);
     });
     markers.push(marker);
