@@ -117,6 +117,10 @@ angular.module('app.services', [])
     lng: -122.2127590
   }];
 
+  function findAll() {
+    return locations;
+  }
+
   function find(city) {
     if (!city) return;
 
@@ -132,7 +136,8 @@ angular.module('app.services', [])
   }
 
   return {
-    find: find
+    find: find,
+    findAll: findAll
   }
 })
 

@@ -17,13 +17,15 @@ angular.module('app.controllers', [])
 
   $scope.search = function(city) {
     Map.removeMarkers();
-    var locs = Locations.find(city)
+    var loc;
+    if (!city)
+      locs = Locations.findAll();
+    else
+      locs = Locations.find(city)
     if (locs)
       locs.forEach(function(loc) {
         Map.addMarker(loc);
       });
-    if (!city)
-      Map.addCurrentLocationMarker();
     Map.center();
   };
 })
