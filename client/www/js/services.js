@@ -213,7 +213,6 @@ angular.module('app.services', [])
     model: 'Mazda Shinari',
     price: '$50,000'
   }, {
-
     id: 7,
     locationId: 5,
     dealer: 'iCars Downtown Palo Alto',
@@ -283,8 +282,6 @@ angular.module('app.services', [])
     address: '360 Oak Road, CA 94305',
     model: 'Mazda Miata 2015',
     price: '$1,000'
-  }, {
-
   }];
 
   function find() {
