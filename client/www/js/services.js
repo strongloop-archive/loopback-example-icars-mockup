@@ -1,6 +1,6 @@
 angular.module('app.services', [])
 
-.factory('Map', function() {
+.factory('Map', function(Locations) {
   var map;
   var markers = [];
 
@@ -10,7 +10,7 @@ angular.module('app.services', [])
   function init($el) {
     var mapOptions = {
       center: myLatLng,
-      zoom: 14,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map($el[0], mapOptions);
@@ -21,7 +21,10 @@ angular.module('app.services', [])
       return false;
     });
 
-    addCurrentLocationMarker();
+    var locs = Locations.findAll();
+    locs.forEach(function(loc) {
+      addMarker(loc);
+    });
   }
 
   function addCurrentLocationMarker() {
