@@ -48,8 +48,9 @@ angular.module('app.services', [])
       position: latlng,
       map: map
     });
+    var rating = Math.floor(Math.random() * 5) + 1;
     console.log(loc.title);
-    var content = '<div class="gm-style-iw" style="max-width:400px;line-height:normal;white-space:nowrap;overflow:auto;"><a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a></div>';
+    var content = '<div class="gm-style-iw" style="max-width:400px;line-height:normal;white-space:nowrap;overflow:auto;"><a href="#/tab/listings/' + loc.id + '">' + loc.title + '</a><br>Rating: ' + rating + ' stars</div>';
     var infowindow = new google.maps.InfoWindow({
       content: content
     });
